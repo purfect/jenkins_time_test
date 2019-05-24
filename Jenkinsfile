@@ -4,9 +4,10 @@ pipeline {
     stages {
         stage('stage 1') {
             steps {
+                def jobstart = currentBuild.startTimeInMillis)/1000;
                 sh "echo ${deploy_date}"
                 sh "echo ${currentBuild.startTimeInMillis}"   
-                sh "echo ${currentBuild.startTimeInMillis.format("yyyy-MM-dd_HH-mm-ss")}"        
+                sh "/bin/date -d @${currentBuild.startTimeInMillis}"        
             }
         }
 	}
