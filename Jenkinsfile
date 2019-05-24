@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh "echo ${deploy_date}"
                 sh "echo ${currentBuild.startTimeInMillis}"   
-                sh "echo \"${params.releaseName}.${env.BRANCH_NAME}.${currentBuild.startTimeInMillis}.${env.BUILD_ID}\""        
+                sh "echo ${currentBuild.startTimeInMillis().format("yyyy-MM-dd_HH-mm-ss")}"        
             }
         }
 	}
