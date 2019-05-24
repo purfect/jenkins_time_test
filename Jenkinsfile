@@ -5,7 +5,7 @@ pipeline {
         stage('stage 1') {
             steps {
                 sh "echo ${deploy_date}"
-                
+                sh "echo ${currentBuild.startTimeInMillis}"           
             }
         }
 	}
