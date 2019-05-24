@@ -5,7 +5,8 @@ pipeline {
         stage('stage 1') {
             steps {
                 sh "echo ${deploy_date}"
-                sh "echo ${currentBuild.startTimeInMillis}"           
+                sh "echo ${currentBuild.startTimeInMillis}"   
+                sh "echo \"${params.releaseName}.${env.BRANCH_NAME}.${currentBuild.startTimeInMillis}.${env.BUILD_ID}\""        
             }
         }
 	}
